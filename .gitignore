@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Virtual env
+3_QA/boom_venv
+
+#Huggingface model
+3_QA/paraphrase-MiniLM-L6-v2
+
+#Data
+3_QA/train-v2.0.json
