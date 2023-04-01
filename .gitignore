@@ -136,3 +136,6 @@ dmypy.json
 
 #Data
 3_QA/train-v2.0.json
+
+#Mac Things
+.DS_Store
