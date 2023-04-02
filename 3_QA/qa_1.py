@@ -1,3 +1,6 @@
+'''
+Script for inspecting the Stanford Question Answering Dataset 2.0
+'''
 import json
 
 with open("train-v2.0.json", 'r') as f:
