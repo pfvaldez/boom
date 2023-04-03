@@ -6,7 +6,7 @@ import torch
 from transformers import AutoModel, AutoTokenizer
 
 class QAEmbedder:
-    def __init__(self, model_name= 'paraphrase-MiniLM-L6-v2'):
+    def __init__(self, model_name="paraphrase-MiniLM-L6-v2"):
         '''
         Defines a QA embedding model. This is, given a set of questions, this class returns the corresponding embedding vectors.
         
@@ -15,10 +15,10 @@ class QAEmbedder:
         '''
         self.model= None
         self.tokenizer= None
-        self.model_name=  model_name
+        self.model_name= model_name
         self.set_model(model_name)
 
-    def get_model(model_name):
+    def get_model(self, model_name):
             """
             Loads a general tokenizer and model using pytorch
             'AutoTokenizer' and 'AutoModel'
@@ -45,7 +45,7 @@ class QAEmbedder:
 
     # Mean Pooling - Take attention mask into account for correct averaging
     # source: https://huggingface.co/sentence-transformers/paraphrase-MiniLM-L6-v2
-    def mean_pooling(model_output, attention_mask):
+    def _mean_pooling(self, model_output, attention_mask):
             """
             Internal method that takes a model output and an attention
             mask and outputs a mean pooling layer.
@@ -88,7 +88,7 @@ class QAEmbedder:
             with torch.no_grad():
                 model_output= self.model(**encoded_input)
             # Mean pooling
-            batch_embeddings= self.mean_pooling(model_output, encoded_input['attention_mask'])
+            batch_embeddings= self._mean_pooling(model_output, encoded_input['attention_mask'])
             question_embeddings.append(batch_embeddings)
 
         question_embeddings= torch.cat(question_embeddings, dim=0)
@@ -111,7 +111,7 @@ class QASearcher:
         self.question_embeddings= None
         self.embedder= QAEmbedder(model_name=model_name)
 
-    def self_context_qa(self, questions, answers):
+    def set_context_qa(self, questions, answers):
         """
         Sets the QA context to be used during search.
         
