@@ -139,3 +139,6 @@ dmypy.json
 
 #Mac Things
 .DS_Store
+
+#API Keys
+4_speech/.env
