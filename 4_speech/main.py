@@ -1,10 +1,12 @@
 from fastapi import FastAPI, Request, WebSocket
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+# from rake_nltk import Rake
 from typing import Dict, Callable
 from deepgram import Deepgram
 from dotenv import load_dotenv
 import os
+import re
 
 load_dotenv()
 
@@ -14,12 +16,45 @@ dg_client= Deepgram(os.getenv('DEEPGRAM_API_KEY'))
 
 templates = Jinja2Templates(directory="templates")
 
+# rake_nltk_var= Rake()
+
+# def extract_keywords(text):
+#     rake_nltk_var.extract_keywords_from_text(text)
+#     keyword_extracted = rake_nltk_var.get_ranked_phrases()
+#     return keyword_extracted
+
+def extract_keywords(text):
+    keyword_extracted = text.split()
+    return keyword_extracted
+
+
+def vowel_consonant(transcript, keywords):
+    con_res= []
+    # printing original list
+    print("The original keywords are: " + str(keywords))
+
+    vow = "aeiou"
+    vow_res = [x for x in keywords if re.search(f"[{vow}]$", x, flags=re.IGNORECASE)]
+    con_res = [x for x in keywords if x not in vow_res]
+    
+    for keyword in con_res:
+        transcript= re.sub(keyword, keyword + "-c", transcript) #appends -c for each keyword with consonant
+
+    for keyword in vow_res:
+        transcript= re.sub(keyword, keyword + "-v", transcript) #appends -v for each keyword
+
+    return transcript
+
 async def process_audio(fast_socket: WebSocket):
     async def get_transcript(data: Dict) -> None:
         if 'channel' in data:
             transcript = data['channel']['alternatives'][0]['transcript']
-            
-            
+
+            keywords= extract_keywords(transcript)
+            transcript= vowel_consonant(transcript, keywords)
+            # print("keywords:\t {}" .format(extract_keywords))
+            print("resulting transcript:\t {}" .format(transcript))
+
             if transcript:
                 await fast_socket.send_text(transcript)
 
