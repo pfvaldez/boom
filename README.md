@@ -48,7 +48,7 @@ chmod +x download_model.sh
 
 ## Task 4 Speech
 
-In this experiment, we create a web app for live text-to-speech transcription. 
+In this experiment, I created a web app for live text-to-speech transcription. 
 
 
 1. Sign up for Deepgram account and get an API key. Save your API key to a `.env` file, make sure to include the `.env` file in your `.gitignore` file.
@@ -81,8 +81,44 @@ cd 4_speech
 uvicorn main:app --reload
 ```
 
-<!-- 5. For Keyword extraction, I used the RAKE algorithm implementation found in the NLTK package
+##  Task 5 Chat
+In this experiment, I created a chatbot. To run this, make sure you have a Diagflow account and Kommunicate account.
+
+To repproduce the chatbot, do the following:
+
+1. Register for an account at the following
+- [ngrok](https://ngrok.com/)
+- [diagflow](https://cloud.google.com/dialogflow)
+- [kommunicate](https://www.kommunicate.io/)
+
+For a custom chatbot you need to create intents, see the image below for reference.
+![Screenshot of diagflow>fullmilment](./img/sample-diagflow-intents.png)
+
+2. Paste your ngrok auth token in a `.env` file. Next, run the flask app.
 ```
-pip install rake-nltk
-``` -->
+python app.py
+```
+
+3. We need a public URL for a webhook to our diagflow where our chatbot model is trained. Run ngrok
+```
+ngrok http 8000
+```
+3. Copy the ngrok url and paste it on the diaglow dashboard under the `Fullfillment` tab.
+Refer to the image below.
+
+![Screenshot of diagflow>fullmilment>webhook](./img/diagflow-fullfilment-webhook.png)
+
+
+3. To view the chatbot deployed at kommunicate visit this [link](https://www.kommunicate.io/livechat-demo?appId=77c7e2f192e5ef67acb969f0a435407d&botIds=boom-demo-7lrhr&assignee=boom-demo-7lrhr).
+
+4. Create a service account, and get the private key for your chatbot.
+
+5. Add the private key to your kommunicate account. Log-in to your `kommunicate.io` account and on the side panel click the robot logo that states `bot integration` upon hovering your mouse. From here, you will be able to host your diagflow to a working chatbot simillar to the image below.
+
+![Screenshot of diagflow>fullmilment>webhook](./img/sample-kommunicate-chatbot.png)
+
+Kommunicate will host your chatbot and provide a demolink simillar to this one.
+`https://www.kommunicate.io/livechat-demo?appId=77c7e2f192e5ef67acb969f0a435407d&botIds=boom-demo-7lrhr&assignee=boom-demo-7lrhr`
+
+
 
