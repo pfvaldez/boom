@@ -1,4 +1,6 @@
 # Byte-compiled / optimized / DLL files
+4_speech/__pycache__/
+5_chat/__pycache__/
 __pycache__/
 *.py[cod]
 *$py.class
@@ -142,3 +144,4 @@ dmypy.json
 
 #API Keys
 4_speech/.env
+5_chat/.env
