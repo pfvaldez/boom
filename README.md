@@ -90,6 +90,9 @@ Step 5: After installing Docker. Run the notebook `test_app.ipynb'
 
 In this experiment, I created a web app for live text-to-speech transcription. 
 
+The demo video, showing live transcription using my microphone can be found [here](https://youtu.be/Tce65iStH2c).
+
+Instructions for running the experiment:
 
 Step 1: Sign up for Deepgram account and get an API key. Save your API key to a `.env` file, make sure to include the `.env` file in your `.gitignore` file.
 It should look something like this:
