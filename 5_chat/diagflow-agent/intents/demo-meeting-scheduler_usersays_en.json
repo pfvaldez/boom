@@ -1,0 +1,70 @@
+[
+  {
+    "id": "c610cbbb-0c79-4c1b-a55e-cf06f9722117",
+    "data": [
+      {
+        "text": "Could you schedule me a meeting on ",
+        "userDefined": false
+      },
+      {
+        "text": "April 14",
+        "meta": "@sys.date",
+        "alias": "date",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "8 am",
+        "meta": "@sys.time",
+        "alias": "time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "9e17ea99-b1c8-4fce-98ce-f6f99688b42d",
+    "data": [
+      {
+        "text": "Schedule a zoom meeting",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "75c13cde-64dd-4202-8710-2b0a3cb7c995",
+    "data": [
+      {
+        "text": "schedule",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "fefac5ca-9b68-42e7-b747-e4a3262e51ba",
+    "data": [
+      {
+        "text": "book a meeting",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]
