@@ -181,5 +181,6 @@ Step 6: To view the chatbot deployed at kommunicate visit this [link](https://ww
 Kommunicate will host your chatbot and provide a demolink simillar to this one.
 `https://www.kommunicate.io/livechat-demo?appId=77c7e2f192e5ef67acb969f0a435407d&botIds=boom-demo-7lrhr&assignee=boom-demo-7lrhr`
 
+The chatbot can also be hosted on GCP, accessible using this [link](https://bot.dialogflow.com/51c2f02f-4b82-4b72-bcb0-6bce48a89974) for a limited time only. Sample screenshot below.
 
-
+![Screenshot of diagflow>fullmilment>webhook](./img/diagflow-gcp.png)
