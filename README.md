@@ -125,9 +125,9 @@ pip install deepgram-sdk
 
 Step 4: In case you encounter a error related to WebSocket, to resolve this I did the following:
 
-    - If you are using Mac follow this suggestion in the [StackOverflow thread](https://stackoverflow.com/a/58525755).
+- If you are using Mac follow this suggestion in the [StackOverflow thread](https://stackoverflow.com/a/58525755).
 
-    - I followed the suggestion in this [GitHub Issue Comment](https://github.com/websockets/ws/issues/1537#issuecomment-476498391), wherein you have to change the URL to your local machines' WebSocket server. This is line 18 of `4_speech/templates/index.html`. 
+- I followed the suggestion in this [GitHub Issue Comment](https://github.com/websockets/ws/issues/1537#issuecomment-476498391), wherein you have to change the URL to your local machines' WebSocket server. This is line 18 of `4_speech/templates/index.html`. 
 
 Step 5: To run the web app, execute the following in your respective terminal:
 
@@ -165,23 +165,31 @@ cd 5_chat
 python app.py
 ```
 
+Step 4. Restore the intents and entities for the agent. Zip the directory containing the aforementioned requirements for the agent.
 
-Step 4: We need a public URL for a webhook to our diagflow where our chatbot model is trained. Run ngrok using this terminal command.
+```
+zip -r boom_chatbot.zip diagflow-agent
+```
+
+Upload the zip file in the Diagflow console, this is done in the `export and import` tab of the settings. Click the "gear icon" as shown in the image below.
+![Screenshot of diagflow > settings > Export and Import](./img/diagflow-import-export.png)
+
+Step 5: We need a public URL for a webhook to our diagflow where our chatbot model is trained. Run ngrok using this terminal command.
 ```
 ngrok http 8000
 ```
 
-Step 5: Copy the ngrok url and paste it on the diaglow dashboard under the `Fullfillment` tab.
+Step 6: Copy the ngrok url and paste it on the diaglow dashboard under the `Fullfillment` tab.
 Refer to the image below.
 
 ![Screenshot of diagflow>fullmilment>webhook](./img/diagflow-fullfilment-webhook.png)
 
 
-Step 6: To view the chatbot deployed at kommunicate visit this [link](https://www.kommunicate.io/livechat-demo?appId=77c7e2f192e5ef67acb969f0a435407d&botIds=boom-demo-7lrhr&assignee=boom-demo-7lrhr).
+Step 7: To view the chatbot deployed at kommunicate visit this [link](https://www.kommunicate.io/livechat-demo?appId=77c7e2f192e5ef67acb969f0a435407d&botIds=boom-demo-7lrhr&assignee=boom-demo-7lrhr).
 
-4. Create a service account, and get the private key for your chatbot.
+Step 8: Create a service account, and get the private key for your chatbot.
 
-5. Add the private key to your kommunicate account. Log-in to your `kommunicate.io` account and on the side panel click the robot logo that states `bot integration` upon hovering your mouse. From here, you will be able to host your diagflow to a working chatbot simillar to the image below.
+Step 9: Add the private key to your kommunicate account. Log-in to your `kommunicate.io` account and on the side panel click the robot logo that states `bot integration` upon hovering your mouse. From here, you will be able to host your diagflow to a working chatbot simillar to the image below.
 
 ![Screenshot of diagflow>fullmilment>webhook](./img/sample-kommunicate-chatbot.png)
 
