@@ -16,6 +16,7 @@
             const mediaRecorder = new MediaRecorder(stream, {mimeType: 'audio/webm'})
 
             const socket = new WebSocket('ws://127.0.0.1:8000/listen')
+            // const socket = new WebSocket('ws://0.0.0.0:8000/listen')
 
             socket.onopen = () => {
                 document.querySelector('#status').textContent = 'Connected'
