@@ -1,11 +1,9 @@
 from fastapi import FastAPI, Request, WebSocket
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
-# from rake_nltk import Rake
 from typing import Dict, Callable
 from deepgram import Deepgram
 from dotenv import load_dotenv
-from pyngrok import ngrok
 import uvicorn
 import os
 import re
@@ -15,15 +13,9 @@ load_dotenv()
 app = FastAPI()
  
 dg_client= Deepgram(os.getenv('DEEPGRAM_API_KEY'))
-templates = Jinja2Templates(directory="templates")
-ngrok.set_auth_token(os.getenv('NGROK_AUTH_TOKEN'))
-public_url= ngrok.connect(8000).public_url
-# rake_nltk_var= Rake()
 
-# def extract_keywords(text):
-#     rake_nltk_var.extract_keywords_from_text(text)
-#     keyword_extracted = rake_nltk_var.get_ranked_phrases()
-#     return keyword_extracted
+templates = Jinja2Templates(directory="templates")
+
 
 def extract_keywords(text):
     keyword_extracted = text.split()
@@ -98,5 +90,5 @@ async def websocket_endpoint(websocket: WebSocket):
 
 
 if __name__ == "__main__":
+    # uvicorn.run(app, host="127.0.0.1", port=8000)
     uvicorn.run(app, host="127.0.0.1", port=8000)
-    # uvicorn.run(app, port=8000)
