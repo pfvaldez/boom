@@ -136,39 +136,6 @@ cd 4_speech
 uvicorn main:app --reload
 ```
 
-Demo hosted on Google Cloud VM, click [here](https://full-icons-doubt-112-206-69-245.loca.lt/)
-Using NPM package localtunnel(alternative to NGROK) to run flask apps running on localhost available over the internet via localtunnel NPM package
-To install Node and NPM in your conda environment:
-```
-conda install -c conda-forge 'nodejs>=16'
-```
-To check your node version:
-```
-node -v
-```
-
-To check your npm version:
-```
-npm -v
-```
-
-To install localtunnel NPM package globally as super user:
-```
-sudo npm install -g localtunnel
-```
-To check if you have successfully installed localtunnel use the lt command:
-lt --help
-
-On the Google Cloud VM, to run the hosted app to run flask apps running on localhost available over the internet via localtunnel. You may provide arguments such as port number, localhost etc.
-
-```
-lt --port 8000 --local-host "127.0.0.1" -o --print-requests
-```
-You will be given a url, it should look like the one below
-```
-https://rude-tables-rush-112-206-69-245.loca.lt
-```
-
 
 ---
 ##  Task 5 Chat

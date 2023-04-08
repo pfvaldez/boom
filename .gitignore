@@ -134,6 +134,7 @@ dmypy.json
 3_QA/boom_venv
 
 #Huggingface model
+2_audioclassification/wav2vec2-base-finetuned-ks
 3_QA/paraphrase-MiniLM-L6-v2
 
 #Data
