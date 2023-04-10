@@ -140,7 +140,7 @@ cd 4_speech
 uvicorn main:app --reload
 ```
 
-
+To view the hosted model hosted on GCP VM visit this [link](https://boom-chatbot-sbnb.uc.r.appspot.com)
 ---
 ##  Task 5 Chat
 In this experiment, I created a chatbot. To run this, make sure you have a Diagflow account and Kommunicate account.
