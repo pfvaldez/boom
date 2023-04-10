@@ -1,5 +1,14 @@
-entrypoint: "uvicorn main:app --reload"
+---
+entrypoint: uvicorn main:app --reload
 env: flex
 runtime: python
-runtime_config: 
-  python_version: 3
+runtime_config:
+  python_version: 3.7
+resources:
+  cpu: 4
+  memory_gb: 4
+  disk_size_gb: 32
+  volumes:
+    - name: ramdisk1
+      volume_type: tmpfs
+      size_gb: 0.5

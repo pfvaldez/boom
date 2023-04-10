@@ -85,6 +85,7 @@ Step 3: Download the Huggingface model using Bash script file `download_model.sh
 ```
 chmod +x download_model.sh
 ./download_model.sh
+
 ```
 
 Step 4: Install Docker, follow instructions from the official site for:
@@ -93,6 +94,8 @@ Step 4: Install Docker, follow instructions from the official site for:
 - [Linux](https://docs.docker.com/desktop/install/linux-install/)
 
 Step 5: After installing Docker. Run the notebook `test_app.ipynb'
+
+To view the hosted model hosted on AWS EC2 visit this [link](http://ec2-3-105-43-140.ap-southeast-2.compute.amazonaws.com:8888).
 
 ---
 ## Task 4 Speech
