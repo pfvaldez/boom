@@ -95,7 +95,7 @@ Step 4: Install Docker, follow instructions from the official site for:
 
 Step 5: After installing Docker. Run the notebook `test_app.ipynb'
 
-To view the hosted model hosted on AWS EC2 visit this [link](http://ec2-3-105-43-140.ap-southeast-2.compute.amazonaws.com:8888).
+<!-- To view the hosted model hosted on AWS EC2 visit this [link](http://ec2-3-105-43-140.ap-southeast-2.compute.amazonaws.com:8888).-->
 
 ---
 ## Task 4 Speech
@@ -140,7 +140,8 @@ cd 4_speech
 uvicorn main:app --reload
 ```
 
-To view the hosted model hosted on GCP VM visit this [link](https://boom-chatbot-sbnb.uc.r.appspot.com)
+<!-- To view the hosted model hosted on GCP VM visit this [link](https://boom-chatbot-sbnb.uc.r.appspot.com) -->
+
 
 ---
 ##  Task 5 Chat
@@ -203,6 +204,6 @@ Step 9: Add the private key to your kommunicate account. Log-in to your `kommuni
 Kommunicate will host your chatbot and provide a demolink simillar to this one.
 `https://www.kommunicate.io/livechat-demo?appId=77c7e2f192e5ef67acb969f0a435407d&botIds=boom-demo-7lrhr&assignee=boom-demo-7lrhr`
 
-The chatbot can also be hosted on GCP, accessible using this [link](https://bot.dialogflow.com/51c2f02f-4b82-4b72-bcb0-6bce48a89974) for a limited time only. Sample screenshot below.
+<!-- The chatbot can also be hosted on GCP, accessible using this [link](https://bot.dialogflow.com/51c2f02f-4b82-4b72-bcb0-6bce48a89974) for a limited time only. Sample screenshot below. -->
 
 ![Screenshot of diagflow>fullmilment>webhook](./img/diagflow-gcp.png)
